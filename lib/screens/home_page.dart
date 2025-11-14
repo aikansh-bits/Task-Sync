@@ -64,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: ColorConstants.kBackgroundBaseColor,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: ColorConstants.kWhiteColor,
         title: Row(
           children: [
@@ -112,6 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: const EdgeInsets.all(16).w,
         child: CustomColorButton(
           title: "CREATE TASK",
+          iconData: Icons.add,
           isActive: true,
           onTap: () async {
             final shouldRefresh = await Navigator.of(
@@ -130,49 +132,6 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.all(16).w,
               child: Column(
                 children: [
-                  // Welcome section
-                  Container(
-                    padding: EdgeInsets.all(12).w,
-                    decoration: BoxDecoration(
-                      color: ColorConstants.kWhiteColor,
-                      borderRadius: BorderRadius.circular(12.r),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(
-                          width: screenWidth * 0.6,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Welcome to TaskSync!',
-                                style: TextStyleConstants.kSemiboldTextStyle
-                                    .copyWith(
-                                      fontSize: 16.spMin,
-                                      color: ColorConstants.kTextBaseColor,
-                                    ),
-                              ),
-                              Text(
-                                'Your productivity companion.',
-                                style: TextStyleConstants.kRegularTextStyle
-                                    .copyWith(
-                                      fontSize: 12.spMin,
-                                      color: ColorConstants.kTextSubtleColor,
-                                    ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const Icon(
-                          Icons.task_alt_outlined,
-                          color: Colors.blueAccent,
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 16.w),
-
                   // Task list section
                   Expanded(
                     child: _tasks.isEmpty
