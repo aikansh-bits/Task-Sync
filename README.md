@@ -1,16 +1,49 @@
-# task_sync
+# 📌 Task Sync – Flutter + Back4App (BaaS)
 
-A new Flutter project.
+**Task Sync** is a cross-platform **Flutter Task Management Application** that supports secure user authentication and complete CRUD operations using **Back4App (Parse Server)**.
 
-## Getting Started
+It enables users to register, log in, create tasks, edit them, delete them, and sync everything in real time — all without writing a custom backend.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 🔐 User Authentication
+- Sign up using student email ID  
+- Secure login using Back4App Auth API  
+- Session-based user handling  
+- Safe logout system  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 🗂️ Task Management (CRUD)
+- Create new tasks  
+- View task list  
+- Update task title & description  
+- Delete tasks  
+- Real-time syncing with Back4App Cloud Database  
+
+### ☁️ Backend-as-a-Service (BaaS)
+- No backend coding needed  
+- Back4App provides:
+  - Authentication  
+  - Cloud database  
+  - Data storage  
+  - Scalability  
+
+### 📱 Cross-Platform App
+- Built using Flutter  
+- Runs on Android, iOS, and Web*  
+(*if enabled*)
+
+---
+
+## 🧰 Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Frontend | Flutter (Dart) |
+| Backend | Back4App (Parse Server) |
+| Database | Back4App Cloud DB |
+| Version Control | GitHub |
+| IDE | VS Code / Android Studio |
+
+---

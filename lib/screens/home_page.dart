@@ -59,8 +59,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       backgroundColor: ColorConstants.kBackgroundBaseColor,
       appBar: AppBar(
@@ -140,38 +138,54 @@ class _HomeScreenState extends State<HomeScreen> {
                             itemCount: _tasks.length,
                             itemBuilder: (context, index) {
                               final task = _tasks[index];
-                              return Container(
-                                margin: EdgeInsets.only(bottom: 8.w),
-                                decoration: BoxDecoration(
-                                  color: ColorConstants.kWhiteColor,
-                                  borderRadius: BorderRadius.circular(12.r),
-                                ),
-                                child: ListTile(
-                                  title: Text(
-                                    task.title,
-                                    style: TextStyleConstants.kSemiboldTextStyle
-                                        .copyWith(
-                                          fontSize: 16.spMin,
-                                          color: ColorConstants.kTextBaseColor,
+                              return InkWell(
+                                onTap: () async {
+                                  final shouldRefresh =
+                                      await Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (_) =>
+                                              NewTask(existingTask: task),
                                         ),
-                                  ),
-                                  subtitle: Text(
-                                    task.description,
-                                    style: TextStyleConstants.kRegularTextStyle
-                                        .copyWith(
-                                          fontSize: 14.spMin,
-                                          color:
-                                              ColorConstants.kTextSubtleColor,
-                                        ),
-                                  ),
-                                  trailing: IconButton(
-                                    icon: const Icon(Icons.delete_outline),
-                                    onPressed: () async {
-                                      await _taskService.deleteTask(
-                                        task.objectId!,
                                       );
-                                      _loadTasks();
-                                    },
+
+                                  if (shouldRefresh == true) _loadTasks();
+                                },
+                                child: Container(
+                                  margin: EdgeInsets.only(bottom: 8.w),
+                                  decoration: BoxDecoration(
+                                    color: ColorConstants.kWhiteColor,
+                                    borderRadius: BorderRadius.circular(12.r),
+                                  ),
+                                  child: ListTile(
+                                    title: Text(
+                                      task.title,
+                                      style: TextStyleConstants
+                                          .kSemiboldTextStyle
+                                          .copyWith(
+                                            fontSize: 16.spMin,
+                                            color:
+                                                ColorConstants.kTextBaseColor,
+                                          ),
+                                    ),
+                                    subtitle: Text(
+                                      task.description,
+                                      style: TextStyleConstants
+                                          .kRegularTextStyle
+                                          .copyWith(
+                                            fontSize: 14.spMin,
+                                            color:
+                                                ColorConstants.kTextSubtleColor,
+                                          ),
+                                    ),
+                                    trailing: IconButton(
+                                      icon: const Icon(Icons.delete_outline),
+                                      onPressed: () async {
+                                        await _taskService.deleteTask(
+                                          task.objectId!,
+                                        );
+                                        _loadTasks();
+                                      },
+                                    ),
                                   ),
                                 ),
                               );
