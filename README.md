@@ -58,4 +58,4 @@ It enables users to register, log in, create tasks, edit them, delete them, and 
 <img width="300" alt="Screenshot_1763137051" src="https://github.com/user-attachments/assets/0e105005-c612-48fd-9969-f0558cc81c16" />
 <img width="300" alt="Screenshot_1763137054" src="https://github.com/user-attachments/assets/f8c7ffae-d3c9-4fd9-a955-2b456f047077" />
 <img width="300" alt="Screenshot_1763140899" src="https://github.com/user-attachments/assets/92ec50eb-26d0-4086-9e32-a20bbba20c1b" />
-<img width="300" alt="Screenshot_1763140899 copy" src="https://github.com/user-attachments/assets/97dabef0-5d8a-4438-b827-0060ec9c8d54" />
+
